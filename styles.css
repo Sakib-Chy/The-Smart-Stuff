@@ -17,7 +17,7 @@ header {
 }
 
 .logo img {
-    width: 100px;
+    width: 50px; /* Made the logo smaller */
     display: block;
     margin: 0 auto;
 }
@@ -45,6 +45,15 @@ header {
 
 .section {
     padding: 2em 0;
+}
+
+.unique-section {
+    padding: 3em 1em;
+    background: linear-gradient(135deg, #f06, #bada55);
+    color: #fff;
+    border-radius: 15px;
+    margin: 2em 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .cta-button {
