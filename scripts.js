@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const elements = document.querySelectorAll('.section, .cta-button');
+    const elements = document.querySelectorAll('.unique-section, .cta-button, .navbar a');
 
     elements.forEach(element => {
         element.style.opacity = 0;
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (position < screenPosition) {
                 element.style.opacity = 1;
                 element.style.transform = 'translateY(0)';
-                element.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+                element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
             }
         });
     });
