@@ -1,82 +1,71 @@
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
+    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+    color: #333;
 }
 
-header {
-    background: #333;
-    color: #fff;
-    padding: 1em 0;
-}
-
-.logo img {
-    width: 50px; /* Made the logo smaller */
-    display: block;
-    margin: 0 auto;
+.navbar {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    padding: 1rem;
 }
 
-.navbar li {
-    margin: 0 1em;
-}
-
-.navbar a {
-    color: #fff;
+.navbar ul li a {
     text-decoration: none;
-    font-size: 1.2em;
+    color: #333;
+    font-weight: bold;
 }
 
-.main {
-    padding: 2em;
+.hero {
     text-align: center;
+    padding: 5rem 2rem;
+    background-color: #e9ecef;
 }
 
-.section {
-    padding: 2em 0;
+.hero h1 {
+    color: #6f42c1;
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
-.unique-section {
-    padding: 3em 1em;
-    background: linear-gradient(135deg, #f06, #bada55);
-    color: #fff;
-    border-radius: 15px;
-    margin: 2em 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
 }
 
-.cta-button {
-    display: inline-block;
-    padding: 1em 2em;
-    background: #333;
-    color: #fff;
+.hero button {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.cta-button:hover {
-    background: #555;
-}
-
-footer {
-    background: #333;
+    background-color: #6f42c1;
     color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    background-color: #563d7c;
+}
+
+.image-section {
     text-align: center;
-    padding: 1em 0;
-    position: fixed;
+    padding: 2rem;
+}
+
+.image-section img {
     width: 100%;
-    bottom: 0;
+    max-width: 500px;
+    border-radius: 10px;
 }
