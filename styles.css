@@ -290,23 +290,81 @@ nav a.active {
 
 /* Footer */
 footer {
-  background: #1a1a1a;
+  background: linear-gradient(135deg, #1a1a1a, #444); /* Gradient background */
   color: #fff;
   text-align: center;
-  padding: 20px 0;
+  padding: 60px 20px; /* Increased padding */
+  margin-top: 0; /* Remove top margin */
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; /* Larger font size */
+  margin-bottom: 20px;
+  color: #d4af37; /* Gold color for the heading */
 }
 
 footer p {
-  margin: 5px 0;
+  font-size: 1.1rem; /* Larger font size */
+  margin: 10px 0;
+  color: #fff;
 }
 
 footer a {
-  color: #d4af37;
+  color: #d4af37; /* Gold color for links */
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 footer a:hover {
-  text-decoration: underline;
+  color: #b38f2a; /* Darker gold on hover */
+}
+
+/* Social Media Icons */
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 15px; /* Increased margin */
+  font-size: 1.5rem; /* Larger icons */
+  color: #fff; /* White icons */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #d4af37; /* Gold color on hover */
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* Footer Links */
+.footer-links {
+  margin-top: 30px;
+}
+
+.footer-links a {
+  margin: 0 15px; /* Increased margin */
+  font-size: 1rem; /* Larger font size */
+  color: #fff; /* White links */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #d4af37; /* Gold color on hover */
+}
+
+/* Copyright Text */
+.copyright {
+  margin-top: 30px;
+  font-size: 0.9rem; /* Smaller font size for copyright */
+  color: #999; /* Light gray color */
 }
 
 /* Responsive Design */
