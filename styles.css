@@ -52,9 +52,9 @@ nav {
 nav a {
   color: #fff;
   text-decoration: none;
-  margin: 0 20px;
-  font-size: 1.1rem;
-  padding: 10px 20px;
+  margin: 0 10px; /* Reduced margin for smaller screens */
+  font-size: 1.1rem; /* Default font size */
+  padding: 10px 15px; /* Default padding */
   border-radius: 25px;
   transition: all 0.3s ease;
   position: relative;
@@ -93,6 +93,19 @@ nav a.active {
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
 
+/* Responsive Design for Phones */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    padding: 10px 0; /* Reduced padding */
+  }
+
+  nav a {
+    font-size: 0.9rem; /* Smaller font size for phones */
+    padding: 8px 12px; /* Smaller padding for phones */
+    margin: 5px; /* Reduced margin for phones */
+  }
+}
 /* Home Section */
 .home-section {
   background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
