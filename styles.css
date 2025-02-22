@@ -112,30 +112,58 @@ nav a:hover {
   font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
   color: #1a1a1a;
+  margin-bottom: 30px;
+}
+
+.login-section form {
+  max-width: 400px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .login-section input {
   display: block;
-  width: 300px;
-  margin: 10px auto;
-  padding: 10px;
+  width: 100%;
+  margin: 15px 0;
+  padding: 15px;
   font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-section input:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.login-section input::placeholder {
+  color: #999;
 }
 
 .login-section button {
   background: #d4af37;
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 15px 30px;
   font-size: 1.1rem;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
+  width: 100%;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .login-section button:hover {
   background: #b38f2a;
+  transform: translateY(-2px);
+}
+
+.login-section button:active {
+  transform: translateY(0);
 }
 
 /* Footer */
