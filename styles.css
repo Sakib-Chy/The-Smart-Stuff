@@ -192,13 +192,15 @@ nav a.active {
 #login-form,
 #register-form {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Spacing between form elements */
 }
 
 /* Input Fields */
 input {
   display: block;
   width: 100%;
-  margin: 15px 0; /* Spacing between inputs */
   padding: 15px; /* Padding inside inputs */
   font-size: 1rem;
   border: 2px solid rgba(255, 255, 255, 0.5); /* Light border */
