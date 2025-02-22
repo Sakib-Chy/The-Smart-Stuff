@@ -88,16 +88,16 @@ toggleFormButton.addEventListener("click", (e) => {
   if (loginForm.classList.contains("active-form")) {
     // Switch to Register Form
     loginForm.classList.remove("active-form");
-    loginForm.classList.add("slide-left");
+    loginForm.classList.add("hidden-form");
     registerForm.classList.remove("hidden-form");
-    registerForm.classList.add("slide-right", "active-form");
+    registerForm.classList.add("active-form");
     formTitle.textContent = "Register";
     toggleFormButton.textContent = "Login";
   } else {
     // Switch to Login Form
     registerForm.classList.remove("active-form");
-    registerForm.classList.add("slide-right");
-    loginForm.classList.remove("slide-left");
+    registerForm.classList.add("hidden-form");
+    loginForm.classList.remove("hidden-form");
     loginForm.classList.add("active-form");
     formTitle.textContent = "Login";
     toggleFormButton.textContent = "Register";
