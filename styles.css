@@ -407,6 +407,7 @@ nav a.active {
   margin-top: 20px;
   font-size: 0.9rem;
   color: #333;
+  text-align: center; /* Center the text */
 }
 
 .toggle-form-text a {
@@ -418,6 +419,14 @@ nav a.active {
 
 .toggle-form-text a:hover {
   color: #b38f2a;
+}
+
+/* Login Footer */
+.login-footer {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center; /* Center the text */
 }
 /* Footer */
 footer {
