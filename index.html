@@ -35,16 +35,29 @@
     </div>
   </section>
   <!-- Login Section -->
-  <section id="login" class="login-section">
-    <div class="container">
-      <h2>Login</h2>
-      <form action="login.php" method="POST">
-        <input type="email" name="email" placeholder="Enter your email" required>
-        <input type="password" name="password" placeholder="Enter your password" required>
-        <button type="submit">Login</button>
-      </form>
+    <!-- Login Section -->
+<section id="login" class="login-section">
+  <h2>Login</h2>
+  <form action="login.php" method="POST">
+    <input type="email" name="email" placeholder="Enter your email" required>
+    <input type="password" name="password" placeholder="Enter your password" required>
+    <button type="submit">Login</button>
+    <div class="login-options">
+      <label>
+        <input type="checkbox" name="remember"> Remember me
+      </label>
+      <a href="#forgot-password">Forgot Password?</a>
     </div>
-  </section>
+    <div class="social-links">
+      <a href="#facebook">Facebook</a>
+      <a href="#twitter">Twitter</a>
+      <a href="#google">Google</a>
+    </div>
+    <div class="login-footer">
+      <p>Copyright 2023 The Smart Stuff, Inc</p>
+    </div>
+  </form>
+</section>
   <!-- Footer -->
   <footer id="contact">
     <div class="container">
