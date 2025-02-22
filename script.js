@@ -19,7 +19,7 @@ window.addEventListener('scroll', () => {
     }
   });
 });
-// Enable smooth scrolling and section locking
+// Enable soft scroll lock (snap at 90% of section height)
 let isScrolling = false;
 
 window.addEventListener("scroll", () => {
@@ -32,13 +32,15 @@ window.addEventListener("scroll", () => {
   sections.forEach((section) => {
     const sectionTop = section.offsetTop;
     const sectionHeight = section.clientHeight;
-    if (window.scrollY >= sectionTop - sectionHeight / 3) {
-      currentSection = section;
+    const scrollPosition = window.scrollY + window.innerHeight * 0.9; // 90% threshold
+
+    if (scrollPosition >= sectionTop + sectionHeight) {
+      currentSection = section.nextElementSibling; // Snap to the next section
     }
   });
 
-  // Snap to the current section
-  if (currentSection) {
+  // Snap to the next section if the threshold is reached
+  if (currentSection && currentSection.tagName === "SECTION") {
     isScrolling = true;
     window.scrollTo({
       top: currentSection.offsetTop,
