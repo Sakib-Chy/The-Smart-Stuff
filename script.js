@@ -53,3 +53,25 @@ window.addEventListener("scroll", () => {
     }, 500); // Adjust timeout to match scroll duration
   }
 });
+
+// Handle navbar clicks to directly scroll to the desired section
+document.querySelectorAll("nav a").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault(); // Prevent default anchor behavior
+    const targetId = link.getAttribute("href"); // Get the target section ID
+    const targetSection = document.querySelector(targetId); // Find the target section
+
+    if (targetSection) {
+      isScrolling = true; // Set the scrolling flag to prevent conflicts
+      window.scrollTo({
+        top: targetSection.offsetTop,
+        behavior: "smooth",
+      });
+
+      // Reset the scrolling flag after the scroll animation completes
+      setTimeout(() => {
+        isScrolling = false;
+      }, 500); // Adjust timeout to match scroll duration
+    }
+  });
+});
