@@ -75,3 +75,31 @@ document.querySelectorAll("nav a").forEach((link) => {
     }
   });
 });
+
+// Toggle between Login and Register forms
+const toggleFormButton = document.getElementById("toggle-form");
+const loginForm = document.getElementById("login-form");
+const registerForm = document.getElementById("register-form");
+const formTitle = document.getElementById("form-title");
+
+toggleFormButton.addEventListener("click", (e) => {
+  e.preventDefault(); // Prevent default link behavior
+
+  if (loginForm.classList.contains("active-form")) {
+    // Switch to Register Form
+    loginForm.classList.remove("active-form");
+    loginForm.classList.add("slide-left");
+    registerForm.classList.remove("hidden-form");
+    registerForm.classList.add("slide-right", "active-form");
+    formTitle.textContent = "Register";
+    toggleFormButton.textContent = "Login";
+  } else {
+    // Switch to Login Form
+    registerForm.classList.remove("active-form");
+    registerForm.classList.add("slide-right");
+    loginForm.classList.remove("slide-left");
+    loginForm.classList.add("active-form");
+    formTitle.textContent = "Login";
+    toggleFormButton.textContent = "Register";
+  }
+});
