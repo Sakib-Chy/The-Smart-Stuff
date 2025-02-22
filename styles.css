@@ -245,67 +245,97 @@ nav a.active {
 /* Login Section */
 .login-section {
   text-align: center;
-  padding: 40px 20px; /* Adjusted padding */
+  padding: 20px; /* Add padding to the section */
   background: #f4f4f4;
-  overflow: hidden; /* Prevent internal scrolling */
+  min-height: 100vh; /* Ensure the section takes full height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.login-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem; /* Larger font size */
-  color: #1a1a1a;
-  margin-bottom: 20px; /* Reduced margin */
-}
-
-.login-section form {
-  max-width: 400px; /* Adjusted width */
+/* Form Container */
+.form-container {
+  width: 100%;
+  max-width: 400px; /* Limit the form width */
   margin: 0 auto;
+  padding: 20px; /* Add padding to the form container */
   background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
   backdrop-filter: blur(10px); /* Blur effect for glass look */
-  padding: 30px; /* Reduced padding */
   border-radius: 20px; /* Rounded corners */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Soft shadow */
   border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for glass effect */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden; /* Prevent internal scrolling */
+  overflow: visible; /* Ensure content is not cut off */
 }
 
-.login-section input {
+/* Forms */
+#login-form,
+#register-form {
+  width: 100%;
+}
+
+/* Input Fields */
+input {
   display: block;
-  width: 100%; /* Full width of the form */
-  margin: 15px 0; /* Reduced margin */
-  padding: 15px; /* Reduced padding */
-  font-size: 1rem; /* Smaller font size */
+  width: 100%;
+  margin: 15px 0; /* Spacing between inputs */
+  padding: 15px; /* Padding inside inputs */
+  font-size: 1rem;
   border: 2px solid rgba(255, 255, 255, 0.5); /* Light border */
   border-radius: 10px; /* Rounded corners */
   outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  box-sizing: border-box; /* Ensure padding is included in the width */
   background: rgba(255, 255, 255, 0.1); /* Semi-transparent input background */
   color: #333; /* Text color */
 }
 
-.login-section input:focus {
-  border-color: #d4af37;
+input:focus {
+  border-color: #d4af37; /* Gold border on focus */
   box-shadow: 0 0 10px rgba(212, 175, 55, 0.3); /* Focus shadow */
 }
 
-.login-section button {
+/* Buttons */
+button {
   background: #d4af37;
   color: #fff;
   border: none;
-  padding: 15px 30px; /* Reduced padding */
-  font-size: 1.1rem; /* Smaller font size */
+  padding: 15px 30px;
+  font-size: 1.1rem;
   cursor: pointer;
-  border-radius: 10px; /* Rounded corners */
-  width: 100%; /* Full width of the form */
+  border-radius: 10px;
+  width: 100%;
   transition: background 0.3s ease, transform 0.3s ease;
-  box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
-.login-section button:hover {
-  background: #b38f2a;
-  transform: translateY(-2px); /* Subtle lift effect on hover */
+button:hover {
+  background: #b38f2a; /* Darker gold on hover */
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Toggle Form Text */
+.toggle-form-text {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #333;
+  text-align: center; /* Center the text */
+}
+
+.toggle-form-text a {
+  color: #d4af37;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.toggle-form-text a:hover {
+  color: #b38f2a; /* Darker gold on hover */
+}
+
+/* Login Footer */
+.login-footer {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center; /* Center the text */
 }
 /* Additional Options */
 .login-options {
