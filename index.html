@@ -36,29 +36,45 @@
       </p>
     </div>
   </section>
-  <!-- Login Section -->
-    <!-- Login Section -->
 <section id="login" class="login-section">
-  <h2>Login</h2>
-  <form action="login.php" method="POST">
-    <input type="email" name="email" placeholder="Enter your email" required>
-    <input type="password" name="password" placeholder="Enter your password" required>
-    <button type="submit">Login</button>
-    <div class="login-options">
-      <label>
-        <input type="checkbox" name="remember"> Remember me
-      </label>
-      <a href="#forgot-password">Forgot Password?</a>
-    </div>
-    <div class="social-links">
-      <a href="#facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="#twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="#google" aria-label="Google"><i class="fab fa-google"></i></a>
-    </div>
-    <div class="login-footer">
-      <p>Copyright 2023 The Smart Stuff, Inc</p>
-    </div>
-  </form>
+  <h2 id="form-title">Login</h2>
+  <div class="form-container">
+    <!-- Login Form -->
+    <form id="login-form" class="active-form" action="login.php" method="POST">
+      <input type="email" name="email" placeholder="Enter your email" required>
+      <input type="password" name="password" placeholder="Enter your password" required>
+      <button type="submit">Login</button>
+      <div class="login-options">
+        <label>
+          <input type="checkbox" name="remember"> Remember me
+        </label>
+        <a href="#forgot-password">Forgot Password?</a>
+      </div>
+      <div class="social-links">
+        <a href="#facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#google" aria-label="Google"><i class="fab fa-google"></i></a>
+      </div>
+    </form>
+
+    <!-- Register Form -->
+    <form id="register-form" class="hidden-form" action="register.php" method="POST">
+      <input type="text" name="username" placeholder="Enter your username" required>
+      <input type="email" name="email" placeholder="Enter your email" required>
+      <input type="password" name="password" placeholder="Enter your password" required>
+      <input type="password" name="confirm-password" placeholder="Confirm your password" required>
+      <button type="submit">Register</button>
+      <div class="login-options">
+        <label>
+          <input type="checkbox" name="agree-terms"> I agree to the terms and conditions
+        </label>
+      </div>
+    </form>
+  </div>
+  <p class="toggle-form-text">Don't have an account? <a href="#" id="toggle-form">Register</a></p>
+  <div class="login-footer">
+    <p>Copyright 2023 The Smart Stuff, Inc</p>
+  </div>
 </section>
  <footer id="contact">
   <div class="container">
