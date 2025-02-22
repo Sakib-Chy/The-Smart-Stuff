@@ -363,6 +363,67 @@ nav a.active {
   font-size: clamp(0.9rem, 2.5vw, 1rem); /* Responsive font size */
   color: #666;
 }
+/* Form Container */
+.form-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  overflow: hidden; /* Hide overflow for sliding effect */
+}
+
+/* Forms */
+#login-form,
+#register-form {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur effect for glass look */
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Hidden Form */
+.hidden-form {
+  position: absolute;
+  top: 0;
+  left: 100%; /* Move the register form off-screen */
+  transform: translateX(0);
+}
+
+/* Active Form */
+.active-form {
+  transform: translateX(0);
+}
+
+/* Slide Animation */
+.slide-left {
+  transform: translateX(-100%); /* Slide login form to the left */
+}
+
+.slide-right {
+  transform: translateX(-100%); /* Slide register form into view */
+}
+
+/* Toggle Form Text */
+.toggle-form-text {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.toggle-form-text a {
+  color: #d4af37;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.toggle-form-text a:hover {
+  color: #b38f2a;
+}
 
 /* Footer */
 footer {
