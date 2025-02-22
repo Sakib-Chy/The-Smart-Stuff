@@ -77,29 +77,28 @@ document.querySelectorAll("nav a").forEach((link) => {
 });
 
 // Toggle between Login and Register forms
-const toggleFormButton = document.getElementById("toggle-form");
+const toggleToRegister = document.getElementById("toggle-to-register");
+const toggleToLogin = document.getElementById("toggle-to-login");
 const loginForm = document.getElementById("login-form");
 const registerForm = document.getElementById("register-form");
 const formTitle = document.getElementById("form-title");
 
-toggleFormButton.addEventListener("click", (e) => {
+// Function to switch to the Register form
+toggleToRegister.addEventListener("click", (e) => {
   e.preventDefault(); // Prevent default link behavior
+  loginForm.classList.remove("active-form");
+  loginForm.classList.add("hidden-form");
+  registerForm.classList.remove("hidden-form");
+  registerForm.classList.add("active-form");
+  formTitle.textContent = "Register";
+});
 
-  if (loginForm.classList.contains("active-form")) {
-    // Switch to Register Form
-    loginForm.classList.remove("active-form");
-    loginForm.classList.add("hidden-form");
-    registerForm.classList.remove("hidden-form");
-    registerForm.classList.add("active-form");
-    formTitle.textContent = "Register";
-    toggleFormButton.textContent = "Login";
-  } else {
-    // Switch to Login Form
-    registerForm.classList.remove("active-form");
-    registerForm.classList.add("hidden-form");
-    loginForm.classList.remove("hidden-form");
-    loginForm.classList.add("active-form");
-    formTitle.textContent = "Login";
-    toggleFormButton.textContent = "Register";
-  }
+// Function to switch to the Login form
+toggleToLogin.addEventListener("click", (e) => {
+  e.preventDefault(); // Prevent default link behavior
+  registerForm.classList.remove("active-form");
+  registerForm.classList.add("hidden-form");
+  loginForm.classList.remove("hidden-form");
+  loginForm.classList.add("active-form");
+  formTitle.textContent = "Login";
 });
