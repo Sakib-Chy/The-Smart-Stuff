@@ -8,9 +8,16 @@ body, html {
   scroll-behavior: smooth; /* Smooth scrolling */
 }
 
-/* Full-Screen Sections */
+/* Enable smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory; /* Enable vertical snap scrolling */
+}
+
+/* Ensure each section takes up the full viewport height and snaps into place */
 section {
   height: 100vh; /* Full viewport height */
+  scroll-snap-align: start; /* Snap to the top of the section */
   display: flex;
   justify-content: center;
   align-items: center;
