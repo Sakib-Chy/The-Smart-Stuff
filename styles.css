@@ -165,86 +165,6 @@ nav a.active {
 /* Login Section */
 .login-section {
   text-align: center;
-  padding: 5vh 20px; /* Responsive padding using viewport height */
-  background: #f4f4f4;
-}
-
-.login-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 5vw, 3rem); /* Responsive font size */
-  color: #1a1a1a;
-  margin-bottom: 3vh; /* Responsive margin using viewport height */
-  letter-spacing: 1px;
-}
-
-.login-section form {
-  max-width: 90%; /* Responsive width */
-  width: 500px; /* Default width */
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
-  backdrop-filter: blur(10px); /* Blur effect for glass look */
-  padding: clamp(20px, 5vw, 40px); /* Responsive padding */
-  border-radius: 20px; /* Rounded corners */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Soft shadow */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for glass effect */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.login-section form:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
-}
-
-.login-section input {
-  display: block;
-  width: 100%; /* Full width of the form */
-  margin: 2vh 0; /* Responsive margin using viewport height */
-  padding: clamp(12px, 2.5vw, 20px); /* Responsive padding */
-  font-size: clamp(0.95rem, 2.5vw, 1.1rem); /* Responsive font size */
-  border: 2px solid rgba(255, 255, 255, 0.5); /* Light border */
-  border-radius: 12px; /* Rounded corners */
-  outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  box-sizing: border-box; /* Ensure padding is included in the width */
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent input background */
-  color: #333; /* Text color */
-}
-
-.login-section input:focus {
-  border-color: #d4af37;
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); /* Enhanced focus shadow */
-}
-
-.login-section input::placeholder {
-  color: #999; /* Placeholder text color */
-  font-size: clamp(0.9rem, 2.5vw, 1rem); /* Responsive placeholder font size */
-}
-
-.login-section button {
-  background: #d4af37;
-  color: #fff;
-  border: none;
-  padding: clamp(12px, 2.5vw, 20px) clamp(20px, 5vw, 40px); /* Responsive padding */
-  font-size: clamp(1rem, 2.5vw, 1.2rem); /* Responsive font size */
-  cursor: pointer;
-  border-radius: 12px; /* Rounded corners */
-  width: 100%; /* Full width of the form */
-  transition: background 0.3s ease, transform 0.3s ease;
-  box-sizing: border-box; /* Ensure padding is included in the width */
-  letter-spacing: 1px;
-}
-
-.login-section button:hover {
-  background: #b38f2a;
-  transform: translateY(-3px); /* Enhanced lift effect on hover */
-}
-
-.login-section button:active {
-  transform: translateY(0);
-}
-/* Login Section */
-.login-section {
-  text-align: center;
   padding: 20px; /* Add padding to the section */
   background: #f4f4f4;
   min-height: 100vh; /* Ensure the section takes full height */
@@ -309,6 +229,56 @@ button {
 button:hover {
   background: #b38f2a; /* Darker gold on hover */
   transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Login Options */
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.login-options label {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.login-options input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.login-options a {
+  color: #d4af37;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.login-options a:hover {
+  color: #b38f2a; /* Darker gold on hover */
+}
+
+/* Social Links */
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between icons */
+}
+
+.social-links a {
+  color: #333; /* Default icon color */
+  text-decoration: none;
+  font-size: 1.5rem; /* Icon size */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #d4af37; /* Gold color on hover */
+  transform: translateY(-3px); /* Lift effect on hover */
 }
 
 /* Toggle Form Text */
