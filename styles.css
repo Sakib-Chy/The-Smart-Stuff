@@ -366,7 +366,6 @@ footer a:hover {
   font-size: 0.9rem; /* Smaller font size for copyright */
   color: #999; /* Light gray color */
 }
-
 /* Responsive Design */
 @media (max-width: 768px) {
   header h1 {
