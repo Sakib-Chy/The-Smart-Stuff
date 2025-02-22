@@ -106,6 +106,7 @@ nav a.active {
     margin: 5px; /* Reduced margin for phones */
   }
 }
+
 /* Home Section */
 .home-section {
   background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
@@ -327,24 +328,6 @@ button:hover {
   transform: translateX(0); /* Bring the form into view */
 }
 
-/* Toggle Form Text */
-.toggle-form-text {
-  margin-top: 20px;
-  font-size: 0.9rem;
-  color: #333;
-}
-
-.toggle-form-text a {
-  color: #d4af37;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.toggle-form-text a:hover {
-  color: #b38f2a;
-}
-
 /* Footer */
 footer {
   background: linear-gradient(135deg, #1a1a1a, #444); /* Gradient background */
@@ -423,6 +406,7 @@ footer a:hover {
   font-size: 0.9rem; /* Smaller font size for copyright */
   color: #999; /* Light gray color */
 }
+
 /* Responsive Design */
 @media (max-width: 768px) {
   header h1 {
