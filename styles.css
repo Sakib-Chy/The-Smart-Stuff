@@ -340,22 +340,23 @@ nav a.active {
 
 /* Social Links */
 .social-links {
-  margin-top: 3vh; /* Responsive margin using viewport height */
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between icons */
 }
 
 .social-links a {
-  color: #333;
+  color: #333; /* Default icon color */
   text-decoration: none;
-  margin: 0 15px; /* Increased margin */
-  font-size: clamp(1.2rem, 3vw, 1.5rem); /* Responsive font size */
+  font-size: 1.5rem; /* Icon size */
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-links a:hover {
-  color: #d4af37;
+  color: #d4af37; /* Gold color on hover */
   transform: translateY(-3px); /* Lift effect on hover */
 }
-
 /* Footer */
 .login-footer {
   margin-top: 4vh; /* Responsive margin using viewport height */
