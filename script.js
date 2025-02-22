@@ -19,3 +19,35 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+// Enable smooth scrolling and section locking
+let isScrolling = false;
+
+window.addEventListener("scroll", () => {
+  if (isScrolling) return; // Prevent multiple scroll triggers
+
+  const sections = document.querySelectorAll("section");
+  let currentSection = null;
+
+  // Find the section closest to the top of the viewport
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (window.scrollY >= sectionTop - sectionHeight / 3) {
+      currentSection = section;
+    }
+  });
+
+  // Snap to the current section
+  if (currentSection) {
+    isScrolling = true;
+    window.scrollTo({
+      top: currentSection.offsetTop,
+      behavior: "smooth",
+    });
+
+    // Reset the scrolling flag after the scroll animation completes
+    setTimeout(() => {
+      isScrolling = false;
+    }, 500); // Adjust timeout to match scroll duration
+  }
+});
