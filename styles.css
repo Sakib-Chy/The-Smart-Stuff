@@ -229,7 +229,71 @@ nav a.active {
 .login-section button:active {
   transform: translateY(0);
 }
+/* Login Section */
+.login-section {
+  text-align: center;
+  padding: 40px 20px; /* Adjusted padding */
+  background: #f4f4f4;
+  overflow: hidden; /* Prevent internal scrolling */
+}
 
+.login-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem; /* Larger font size */
+  color: #1a1a1a;
+  margin-bottom: 20px; /* Reduced margin */
+}
+
+.login-section form {
+  max-width: 400px; /* Adjusted width */
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur effect for glass look */
+  padding: 30px; /* Reduced padding */
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for glass effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Prevent internal scrolling */
+}
+
+.login-section input {
+  display: block;
+  width: 100%; /* Full width of the form */
+  margin: 15px 0; /* Reduced margin */
+  padding: 15px; /* Reduced padding */
+  font-size: 1rem; /* Smaller font size */
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Light border */
+  border-radius: 10px; /* Rounded corners */
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent input background */
+  color: #333; /* Text color */
+}
+
+.login-section input:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3); /* Focus shadow */
+}
+
+.login-section button {
+  background: #d4af37;
+  color: #fff;
+  border: none;
+  padding: 15px 30px; /* Reduced padding */
+  font-size: 1.1rem; /* Smaller font size */
+  cursor: pointer;
+  border-radius: 10px; /* Rounded corners */
+  width: 100%; /* Full width of the form */
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.login-section button:hover {
+  background: #b38f2a;
+  transform: translateY(-2px); /* Subtle lift effect on hover */
+}
 /* Additional Options */
 .login-options {
   display: flex;
