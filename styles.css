@@ -382,29 +382,24 @@ nav a.active {
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: transform 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 /* Hidden Form */
 .hidden-form {
   position: absolute;
   top: 0;
-  left: 100%; /* Move the register form off-screen */
-  transform: translateX(0);
+  left: 0;
+  opacity: 0; /* Hide the form */
+  pointer-events: none; /* Disable interactions */
+  transform: translateX(100%); /* Move the form off-screen */
 }
 
 /* Active Form */
 .active-form {
-  transform: translateX(0);
-}
-
-/* Slide Animation */
-.slide-left {
-  transform: translateX(-100%); /* Slide login form to the left */
-}
-
-.slide-right {
-  transform: translateX(-100%); /* Slide register form into view */
+  opacity: 1; /* Show the form */
+  pointer-events: auto; /* Enable interactions */
+  transform: translateX(0); /* Bring the form into view */
 }
 
 /* Toggle Form Text */
@@ -424,7 +419,6 @@ nav a.active {
 .toggle-form-text a:hover {
   color: #b38f2a;
 }
-
 /* Footer */
 footer {
   background: linear-gradient(135deg, #1a1a1a, #444); /* Gradient background */
