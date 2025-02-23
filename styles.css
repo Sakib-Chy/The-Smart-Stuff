@@ -300,6 +300,42 @@ nav a.active {
   }
 }
 
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation classes */
+.animate-on-scroll {
+  opacity: 0;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* About section specific styles */
+.about-us h2 {
+  transition: all 0.5s ease;
+}
+
+.about-us p {
+  transition: all 0.5s ease;
+  transition-delay: 0.2s; /* Delay paragraph animation */
+}
+
+/* Add spacing between elements for better animation flow */
+.about-us h2 {
+  margin-bottom: 30px;
+}
+
 /* Home Section */
 .home-section {
   background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
