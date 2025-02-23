@@ -231,21 +231,25 @@ const registerForm = document.getElementById("register-form");
 const formTitle = document.getElementById("form-title");
 
 // Function to switch to the Register form
-toggleToRegister.addEventListener("click", (e) => {
-  e.preventDefault(); // Prevent default link behavior
-  loginForm.classList.remove("active-form");
-  loginForm.classList.add("hidden-form");
-  registerForm.classList.remove("hidden-form");
-  registerForm.classList.add("active-form");
-  formTitle.textContent = "Register";
-});
+if (toggleToRegister) {
+  toggleToRegister.addEventListener("click", (e) => {
+    e.preventDefault(); // Prevent default link behavior
+    loginForm.classList.remove("active-form");
+    loginForm.classList.add("hidden-form");
+    registerForm.classList.remove("hidden-form");
+    registerForm.classList.add("active-form");
+    formTitle.textContent = "Register";
+  });
+}
 
 // Function to switch to the Login form
-toggleToLogin.addEventListener("click", (e) => {
-  e.preventDefault(); // Prevent default link behavior
-  registerForm.classList.remove("active-form");
-  registerForm.classList.add("hidden-form");
-  loginForm.classList.remove("hidden-form");
-  loginForm.classList.add("active-form");
-  formTitle.textContent = "Login";
-});
+if (toggleToLogin) {
+  toggleToLogin.addEventListener("click", (e) => {
+    e.preventDefault(); // Prevent default link behavior
+    registerForm.classList.remove("active-form");
+    registerForm.classList.add("hidden-form");
+    loginForm.classList.remove("hidden-form");
+    loginForm.classList.add("active-form");
+    formTitle.textContent = "Login";
+  });
+}
