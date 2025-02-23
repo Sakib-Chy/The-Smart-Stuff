@@ -200,46 +200,52 @@ nav a.active {
 
 /* Input Fields */
 input {
-  display: block;
-  width: 95%;
-  padding: 15px; /* Padding inside inputs */
+  width: calc(100% - 30px); /* Account for padding */
+  padding: 15px;
   font-size: 1rem;
-  border: 2px solid rgba(255, 255, 255, 0.5); /* Light border */
-  border-radius: 10px; /* Rounded corners */
-  outline: none;
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent input background */
-  color: #333; /* Text color */
-}
-
-input:focus {
-  border-color: #d4af37; /* Gold border on focus */
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3); /* Focus shadow */
-}
-
-/* Buttons */
-button {
-  background: #d4af37;
-  color: #fff;
-  border: none;
-  padding: 15px 30px;
-  font-size: 1.1rem;
-  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 10px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #333;
+  margin: 0 auto; /* Center the input box */
+  box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+/* Form Container */
+.form-container {
   width: 100%;
-  transition: background 0.3s ease, transform 0.3s ease;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px; /* Increased padding */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
-button:hover {
-  background: #b38f2a; /* Darker gold on hover */
-  transform: translateY(-2px); /* Lift effect on hover */
-}
-
-/* Login Options */
-.login-options {
+/* Forms */
+#login-form,
+#register-form {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 15px 0;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center; /* Center form elements */
+}
+
+/* Update button width to match inputs */
+button {
+  width: calc(100% - 30px);
+  margin: 0 auto;
+}
+
+/* Adjust login options width */
+.login-options {
+  width: calc(100% - 30px);
+  margin: 15px auto;
 }
 
 .login-options label {
