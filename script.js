@@ -210,3 +210,42 @@ toggleToLogin.addEventListener("click", (e) => {
   loginForm.classList.add("active-form");
   formTitle.textContent = "Login";
 });
+
+// Create Intersection Observer for animations
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.3 // Trigger when 30% of element is visible
+};
+
+// Callback function when element becomes visible
+const animateOnScroll = (entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('fade-in-up');
+      observer.unobserve(entry.target); // Stop observing once animated
+    }
+  });
+};
+
+// Create the observer
+const observer = new IntersectionObserver(animateOnScroll, observerOptions);
+
+// Function to initialize animations
+function initScrollAnimations() {
+  // Get About section elements
+  const aboutSection = document.querySelector('.about-us');
+  const aboutTitle = aboutSection.querySelector('h2');
+  const aboutText = aboutSection.querySelector('p');
+
+  // Add initial class
+  aboutTitle.classList.add('animate-on-scroll');
+  aboutText.classList.add('animate-on-scroll');
+
+  // Start observing elements
+  observer.observe(aboutTitle);
+  observer.observe(aboutText);
+}
+
+// Initialize animations when DOM is loaded
+document.addEventListener('DOMContentLoaded', initScrollAnimations);
