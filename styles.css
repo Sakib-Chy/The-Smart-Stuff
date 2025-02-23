@@ -8,7 +8,6 @@ body, html {
   background-color: #f4f4f4;
   color: #333;
   scroll-behavior: smooth; /* Smooth scrolling */
-  padding-top: 60px; /* Adjust this value based on your navbar height */
 }
 body {
   padding-top: 0; /* Remove the previous padding */
