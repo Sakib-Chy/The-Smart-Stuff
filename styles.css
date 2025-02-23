@@ -2,6 +2,8 @@
 body, html {
   margin: 0;
   padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
   font-family: 'Roboto', sans-serif;
   background-color: #f4f4f4;
   color: #333;
@@ -15,15 +17,131 @@ html {
 
 /* Ensure each section takes up the full viewport height */
 section {
-  height: 100vh; /* Full viewport height */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  min-height: 100vh; /* Change from height to min-height */
+  width: 100%;
   padding: 20px;
   box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Header adjustments */
+  header h1 {
+    font-size: 2rem;
+    padding: 0 10px;
+  }
+
+  /* Section content adjustments */
+  section {
+    padding: 15px;
+    min-height: auto; /* Allow sections to adapt to content */
+  }
+
+  /* Home section adjustments */
+  .home-content {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .home-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .home-content p {
+    font-size: 1rem;
+  }
+
+  /* About section adjustments */
+  .about-us .container {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .about-us p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  /* Login section adjustments */
+  .login-section {
+    padding: 15px;
+    min-height: auto;
+  }
+
+  .form-container {
+    width: 90%;
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  /* Footer adjustments */
+  footer {
+    width: 100%;
+    padding: 30px 15px;
+    box-sizing: border-box;
+  }
+
+  footer .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .social-icons a {
+    margin: 0 10px;
+  }
+
+  .footer-links a {
+    margin: 0 8px;
+    font-size: 0.9rem;
+  }
+
+  /* Navigation adjustments */
+  nav {
+    padding: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    margin: 5px;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+/* Additional fixes for extra small devices */
+@media (max-width: 480px) {
+  .form-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  input, button {
+    width: 100%;
+  }
+
+  .social-icons {
+    flex-wrap: wrap;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links a {
+    margin: 5px 0;
+  }
+}
+  
 /* Header */
 header {
   background: linear-gradient(135deg, #1a1a1a, #444);
