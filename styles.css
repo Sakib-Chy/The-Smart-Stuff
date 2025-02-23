@@ -169,15 +169,19 @@ nav {
   justify-content: center;
   background: #1a1a1a;
   padding: 15px 0;
-  position: sticky; /* Change back to sticky */
+  position: fixed; /* Change from sticky to fixed */
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
-  z-index: 9999;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999; /* Increase z-index to ensure it stays on top */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Add shadow for better visibility */
 }
 
+/* Add padding to the body to account for fixed navbar */
+body {
+  padding-top: 60px; /* Adjust this value based on your navbar height */
+}
 /* Responsive adjustments */
 @media (max-width: 768px) {
   header {
