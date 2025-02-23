@@ -19,100 +19,148 @@ window.addEventListener('scroll', () => {
     }
   });
 });
-// Track scrolling state
+// Define scroll variables
 let isScrolling = false;
 let lastScrollTime = 0;
-const scrollCooldown = 800; // Cooldown period in milliseconds
+let currentSectionIndex = 0;
+const scrollCooldown = 1000; // Longer cooldown for smoother transitions
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('nav a');
 
-// Update active navigation link based on scroll position
-function updateActiveNavLink() {
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('nav a');
-  
-  let currentSectionId = '';
-  const scrollPosition = window.scrollY + (window.innerHeight / 3);
+// Get the nearest section index based on scroll position
+function getNearestSectionIndex() {
+  const viewportMiddle = window.scrollY + (window.innerHeight / 2);
+  let nearestIndex = 0;
+  let minDistance = Infinity;
 
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    const sectionBottom = sectionTop + section.offsetHeight;
+  sections.forEach((section, index) => {
+    const sectionMiddle = section.offsetTop + (section.offsetHeight / 2);
+    const distance = Math.abs(viewportMiddle - sectionMiddle);
     
-    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-      currentSectionId = section.getAttribute('id');
+    if (distance < minDistance) {
+      minDistance = distance;
+      nearestIndex = index;
     }
   });
 
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href').substring(1) === currentSectionId) {
-      link.classList.add('active');
-    }
-  });
+  return nearestIndex;
 }
 
-// Smooth scroll to section
-function smoothScrollToSection(targetPosition) {
+// Smooth scroll to a specific section
+function scrollToSection(index) {
+  if (isScrolling) return;
+  
   isScrolling = true;
+  currentSectionIndex = index;
+  
+  const targetPosition = sections[index].offsetTop - 60; // Adjust for navbar
+  
   window.scrollTo({
     top: targetPosition,
     behavior: 'smooth'
   });
-  
-  // Reset scrolling state after animation
+
+  // Update active nav link
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${sections[index].id}`) {
+      link.classList.add('active');
+    }
+  });
+
+  // Reset scroll state after animation
   setTimeout(() => {
     isScrolling = false;
   }, scrollCooldown);
 }
 
-// Handle scroll events
-window.addEventListener('scroll', () => {
-  if (isScrolling) return;
+// Handle mouse wheel events
+function handleWheel(event) {
+  if (isScrolling) {
+    event.preventDefault();
+    return;
+  }
+
+  const currentTime = Date.now();
+  if (currentTime - lastScrollTime < scrollCooldown) {
+    event.preventDefault();
+    return;
+  }
+
+  lastScrollTime = currentTime;
   
+  // Determine scroll direction
+  const direction = event.deltaY > 0 ? 1 : -1;
+  const nearestIndex = getNearestSectionIndex();
+  const targetIndex = Math.max(0, Math.min(sections.length - 1, nearestIndex + direction));
+
+  if (nearestIndex !== targetIndex) {
+    event.preventDefault();
+    scrollToSection(targetIndex);
+  }
+}
+
+// Handle keyboard navigation
+function handleKeydown(event) {
+  if (isScrolling) return;
+
   const currentTime = Date.now();
   if (currentTime - lastScrollTime < scrollCooldown) return;
-  
-  lastScrollTime = currentTime;
-  updateActiveNavLink();
-});
+
+  if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+    event.preventDefault();
+    const direction = event.key === 'ArrowDown' ? 1 : -1;
+    const targetIndex = Math.max(0, Math.min(sections.length - 1, currentSectionIndex + direction));
+    scrollToSection(targetIndex);
+  }
+}
 
 // Handle navbar clicks
-document.querySelectorAll('nav a').forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    
-    if (isScrolling) return;
-    
-    const targetId = link.getAttribute('href');
-    const targetSection = document.querySelector(targetId);
-    
-    if (targetSection) {
-      const targetPosition = targetSection.offsetTop - 60; // Adjust for navbar height
-      smoothScrollToSection(targetPosition);
-    }
-  });
-});
+function handleNavClick(event) {
+  event.preventDefault();
+  if (isScrolling) return;
 
-// Handle initial page load
-window.addEventListener('load', () => {
-  // Check if URL has a hash and scroll to that section
+  const targetId = event.currentTarget.getAttribute('href');
+  const targetSection = document.querySelector(targetId);
+  const targetIndex = Array.from(sections).indexOf(targetSection);
+
+  if (targetIndex !== -1) {
+    scrollToSection(targetIndex);
+  }
+}
+
+// Initialize scroll handling
+function initScrollHandling() {
+  // Add event listeners
+  window.addEventListener('wheel', handleWheel, { passive: false });
+  window.addEventListener('keydown', handleKeydown);
+  navLinks.forEach(link => link.addEventListener('click', handleNavClick));
+
+  // Handle initial page load
   if (window.location.hash) {
     const targetSection = document.querySelector(window.location.hash);
     if (targetSection) {
-      setTimeout(() => {
-        const targetPosition = targetSection.offsetTop - 60;
-        window.scrollTo(0, targetPosition);
-      }, 100);
+      const targetIndex = Array.from(sections).indexOf(targetSection);
+      setTimeout(() => scrollToSection(targetIndex), 100);
     }
   }
-  
-  updateActiveNavLink();
-});
 
-// Optional: Update active link on window resize
+  // Set initial section index
+  currentSectionIndex = getNearestSectionIndex();
+}
+
+// Handle window resize
 let resizeTimeout;
 window.addEventListener('resize', () => {
   clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(updateActiveNavLink, 100);
+  resizeTimeout = setTimeout(() => {
+    scrollToSection(currentSectionIndex);
+  }, 100);
 });
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', initScrollHandling);
+
 
 // Handle navbar clicks to directly scroll to the desired section
 document.querySelectorAll("nav a").forEach((link) => {
