@@ -10,7 +10,7 @@ body, html {
   scroll-behavior: smooth; /* Smooth scrolling */
 }
 body {
-  padding-top: 0; /* Remove the previous padding */
+  padding-top: 60px; /* Adjust this value based on your navbar height */
 }
 /* Enable smooth scrolling for the entire page */
 html {
