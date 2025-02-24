@@ -32,6 +32,19 @@ section {
 }
 
 /* Responsive adjustments */
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 50px; /* Smaller padding for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 40px; /* Even smaller padding for very small devices */
+  }
+}
+
 @media (max-width: 768px) {
   /* Header adjustments */
   header h1 {
